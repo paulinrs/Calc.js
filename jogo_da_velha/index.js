@@ -1,5 +1,5 @@
 const boardRegions = document.querySelectorAll('#gameBoard span')
-const vBoard = []
+let vBoard = []
 let turnPlayer = ''
 
 function updateTitle() {
@@ -18,3 +18,9 @@ function  initializeGame() {
         element.addEventListener('click', handleBoardClick)
     })
 }
+
+function handleBoardClick(ev) {
+
+}
+
+document.getElementById('start').addEventListener('click', initializeGame)
