@@ -20,6 +20,18 @@ function  initializeGame() {
 }
 
 function handleBoardClick(ev) {
+    const span = ev.currentTarget
+    const region = span.dataset.region // N.N
+    const rowColumnPair = region.split('.') //"N", "N"
+    const row = rowColumnPair[0]
+    const column =rowColumnPair[1]
+    if (turnPlayer === 'player1') {
+        span.innerText = 'X'
+    } else {
+        span.innerText = '0'
+        vBoard
+    }
+
 
 }
 
