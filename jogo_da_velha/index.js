@@ -19,6 +19,11 @@ function  initializeGame() {
     })
 }
 
+function disableRegion(element) {
+    element.style.cursor = 'default'
+    element.removeEventListener('click', handleBoardClick)
+}
+
 function handleBoardClick(ev) {
     const span = ev.currentTarget
     const region = span.dataset.region // N.N
@@ -29,10 +34,11 @@ function handleBoardClick(ev) {
         span.innerText = 'X'
     } else {
         span.innerText = '0'
-        vBoard
+        vBoard[row] [column] = '0'
     }
-
-
+    console.clear()
+    console.table(vBoard)
+    disableRegion(span)
 }
 
 document.getElementById('start').addEventListener('click', initializeGame)
